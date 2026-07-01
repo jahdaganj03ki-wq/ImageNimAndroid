@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ImageNim</string>
+    <string name="mode_generate">Bild generieren</string>
+    <string name="mode_edit">Bild bearbeiten</string>
+    <string name="settings">Einstellungen</string>
+    <string name="api_key_label">NVIDIA NIM API-Key</string>
+    <string name="api_key_hint">nvapi-... eingeben</string>
+    <string name="save">Speichern</string>
+    <string name="saved">Gespeichert</string>
+    <string name="prompt_hint">Beschreibe das Bild...</string>
+    <string name="generate">Generieren</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="loading">Wird verarbeitet...</string>
+    <string name="error_api_key">Bitte API-Key in den Einstellungen hinterlegen</string>
+    <string name="error_network">Netzwerkfehler: %s</string>
+    <string name="select_model">Modell auswählen</string>
+    <string name="select_image">Bild auswählen</string>
+    <string name="save_image">Bild speichern</string>
+    <string name="image_saved">Bild gespeichert</string>
+    <string name="get_api_key">API-Key holen auf build.nvidia.com</string>
+</resources>
