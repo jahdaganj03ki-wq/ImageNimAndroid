@@ -13,13 +13,13 @@ data class GenerateRequest(
 data class EditRequest(
     val prompt: String,
     val image: String,
-    val negative_prompt: String = "",
-    val cfg_scale: Int = 5,
-    val steps: Int = 25,
-    val seed: Int = 0,
-    val width: Int = 1024,
-    val height: Int = 1024,
-    val mode: String = "image-to-image"
+    val mode: String? = null,
+    val negative_prompt: String? = null,
+    val cfg_scale: Int? = null,
+    val steps: Int? = null,
+    val seed: Int? = null,
+    val width: Int? = null,
+    val height: Int? = null
 )
 
 data class NIMResponse(
