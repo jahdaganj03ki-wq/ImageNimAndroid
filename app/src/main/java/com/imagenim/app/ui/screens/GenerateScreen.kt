@@ -1,7 +1,6 @@
 package com.imagenim.app.ui.screens
 
 import android.util.Base64
-import android.util.Base64
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -129,7 +128,7 @@ fun GenerateScreen(
                 Text("Ergebnis", style = MaterialTheme.typography.titleMedium)
                 val imageBytes = remember(base64) {
                     try {
-                        Base64.decode(base64, Base64.DEFAULT)
+                        android.util.Base64.decode(base64, android.util.Base64.DEFAULT)
                     } catch (e: Exception) { null }
                 }
                 if (imageBytes != null) {
@@ -141,7 +140,7 @@ fun GenerateScreen(
                                 .build(),
                             contentDescription = "Generiertes Bild",
                             modifier = Modifier.fillMaxWidth(),
-                            contentScale = ContentScale.FitWrap
+                            contentScale = ContentScale.Fit
                         )
                     }
                     OutlinedButton(

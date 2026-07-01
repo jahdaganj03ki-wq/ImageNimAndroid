@@ -2,10 +2,10 @@ package com.imagenim.app.ui.screens
 
 import android.graphics.BitmapFactory
 import android.net.Uri
-import android.util.Base64
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import android.graphics.Bitmap
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -53,8 +53,8 @@ fun EditScreen(
                     true
                 )
                 val output = ByteArrayOutputStream()
-                scaled.compress(android.graphics.Bitmap.CompressFormat.JPEG, 85, output)
-                val base64 = Base64.encodeToString(output.toByteArray(), Base64.NO_WRAP)
+                scaled.compress(Bitmap.CompressFormat.JPEG, 85, output)
+                val base64 = android.util.Base64.encodeToString(output.toByteArray(), android.util.Base64.NO_WRAP)
                 if (!scaled.equals(bitmap)) scaled.recycle()
                 bitmap.recycle()
                 viewModel.setInputImage(it, base64)
@@ -125,7 +125,7 @@ fun EditScreen(
                             .build(),
                         contentDescription = "Eingabebild",
                         modifier = Modifier.fillMaxWidth(),
-                        contentScale = ContentScale.FitWrap
+                        contentScale = ContentScale.Fit
                     )
                 }
             }
@@ -198,7 +198,7 @@ fun EditScreen(
                                 .build(),
                             contentDescription = "Bearbeitetes Bild",
                             modifier = Modifier.fillMaxWidth(),
-                            contentScale = ContentScale.FitWrap
+                            contentScale = ContentScale.Fit
                         )
                     }
                     OutlinedButton(
