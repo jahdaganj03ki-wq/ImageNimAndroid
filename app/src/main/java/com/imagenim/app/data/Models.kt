@@ -20,7 +20,25 @@ data class EditRequest(
     val seed: Int? = null,
     val width: Int? = null,
     val height: Int? = null
-)
+) {
+    fun toMap(model: ModelInfo): Map<String, Any?> {
+        val map = mutableMapOf<String, Any?>()
+        map["prompt"] = prompt
+        map["image"] = if (model.modelName == "flux.1-kontext-dev") {
+            "data:image/jpeg;base64,$image"
+        } else {
+            image
+        }
+        mode?.let { map["mode"] = it }
+        negative_prompt?.let { map["negative_prompt"] = it }
+        cfg_scale?.let { map["cfg_scale"] = it }
+        steps?.let { map["steps"] = it }
+        seed?.let { map["seed"] = it }
+        width?.let { map["width"] = it }
+        height?.let { map["height"] = it }
+        return map
+    }
+}
 
 data class NIMResponse(
     val artifacts: List<Artifact>?

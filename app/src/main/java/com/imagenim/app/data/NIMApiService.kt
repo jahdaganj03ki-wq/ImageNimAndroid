@@ -26,7 +26,7 @@ class NIMApiService(private val apiKey: String) {
     }
 
     fun editImage(model: ModelInfo, request: EditRequest): Result<NIMResponse> {
-        return makeRequest(model, gson.toJson(request))
+        return makeRequest(model, gson.toJson(request.toMap(model)))
     }
 
     private fun makeRequest(model: ModelInfo, jsonBody: String): Result<NIMResponse> {
