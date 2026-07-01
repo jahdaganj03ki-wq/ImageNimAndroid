@@ -186,7 +186,7 @@ fun EditScreen(
                 Text("Ergebnis", style = MaterialTheme.typography.titleMedium)
                 val imageBytes = remember(uiState.resultBase64) {
                     try {
-                        Base64.decode(uiState.resultBase64, Base64.DEFAULT)
+                        android.util.Base64.decode(uiState.resultBase64, android.util.Base64.DEFAULT)
                     } catch (e: Exception) { null }
                 }
                 if (imageBytes != null) {

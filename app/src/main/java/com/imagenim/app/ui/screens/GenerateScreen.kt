@@ -1,6 +1,5 @@
 package com.imagenim.app.ui.screens
 
-import android.util.Base64
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
