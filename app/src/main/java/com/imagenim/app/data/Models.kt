@@ -24,11 +24,7 @@ data class EditRequest(
     fun toMap(model: ModelInfo): Map<String, Any?> {
         val map = mutableMapOf<String, Any?>()
         map["prompt"] = prompt
-        map["image"] = if (model.modelName == "flux.1-kontext-dev") {
-            "data:image/jpeg;base64,$image"
-        } else {
-            image
-        }
+        map["image"] = image
         mode?.let { map["mode"] = it }
         negative_prompt?.let { map["negative_prompt"] = it }
         cfg_scale?.let { map["cfg_scale"] = it }
